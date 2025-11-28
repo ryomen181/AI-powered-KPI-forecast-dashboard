@@ -15,7 +15,7 @@ except Exception:
 st.set_page_config(page_title="Mobile App KPI Dashboard + AI", layout="wide", initial_sidebar_state="expanded")
 st.title("📱 Mobile App KPI Dashboard — with AI-lite")
 
-# ---------- load data ----------
+# ---------- loading data ----------
 @st.cache_data
 def load_data(path="data/daily_kpis.csv"):
     df = pd.read_csv(path, parse_dates=["date"])
@@ -93,7 +93,7 @@ def detect_anomalies_iforest(series_vals, n_estimators=100, contamination=0.05, 
     return preds, scores
 
 def simple_forecast_prophet(df_ts, horizon=14):
-    # df_ts: dataframe with columns date (datetime), y (numeric)
+   
     if not PROPHET_OK:
         raise RuntimeError("Prophet not available")
     m = Prophet(daily_seasonality=True, weekly_seasonality=True)
@@ -112,7 +112,7 @@ def simple_rolling_forecast(series, horizon=14, window=7):
         preds.append(last_val)  # naive constant forecast
     return preds
 
-# ---------- run AI if enabled ----------
+
 if run_ai:
     st.markdown("## AI Insights & Anomalies")
     # 1) Anomaly detection on DAU
@@ -200,3 +200,4 @@ if run_ai:
         st.write(" ".join(insight_lines))
 
 st.caption("Data source: data/daily_kpis.csv — AI features run locally. IsolationForest for anomalies, Prophet optional for forecasting.")
+
