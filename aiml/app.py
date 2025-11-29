@@ -199,5 +199,5 @@ if run_ai:
             insight_lines.append("No strong correlation between DAU and session duration; volume and engagement are largely independent.")
         st.write(" ".join(insight_lines))
 
-st.caption("Data source: data/daily_kpis.csv — AI features run locally. IsolationForest for anomalies, Prophet optional for forecasting.")
+st.caption("Data source: data/daily_kpis.csv — AI features run locally. IsolationForest for anomalies, Prophet for forecasting.")
 
