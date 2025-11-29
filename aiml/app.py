@@ -12,8 +12,8 @@ try:
 except Exception:
     PROPHET_OK = False
 
-st.set_page_config(page_title="Mobile App KPI Dashboard + AI", layout="wide", initial_sidebar_state="expanded")
-st.title("📱 Mobile App KPI Dashboard — with AI-lite")
+st.set_page_config(page_title=" KPI Dashboard", layout="wide", initial_sidebar_state="expanded")
+st.title(" KPI Dashboard — with AI Insights")
 
 # ---------- loading data ----------
 @st.cache_data
